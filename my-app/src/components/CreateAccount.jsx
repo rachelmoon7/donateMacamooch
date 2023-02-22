@@ -25,11 +25,11 @@ const CreateAccount = (props) => {
             .then((data) => {
                 console.log('this is the api response', data.response[0].name)
                 if (data) {
-                    setName(data.response[0].name)
-                    setEmail(data.response[0].email)
+                    setName(data.response[0].name);
+                    setEmail(data.response[0].email);
                     setPassword(data.response[0].password);
                     setMessage("Created account successfully");
-                    console.log("message::", message)
+                    console.log("message::", message);
                     props.setCreateAcctButton(false);
                 } else {
                     setMessage("Some error occured");

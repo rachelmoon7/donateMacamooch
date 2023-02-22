@@ -101,23 +101,29 @@ const Header = () => {
             </NavItem>
             <NavItem>
                 {auth ? (
-                            <MyDonations />
+                          <MyDonations />
                         ) : (
                             [   
-                                <Login setAuth={setAuth}
-                                        setCreateAcctButton={setCreateAcctButton}/>
+                              <Login setAuth={setAuth}
+                                      setCreateAcctButton={setCreateAcctButton}/>,
+                              <NavItem>
+                                {createAcctButton ? (
+                                            <CreateAccount setCreateAcctButton={setCreateAcctButton}/>
+                                        ) : (
+                                            <button onClick={handleClick} >Create Account </button>
+                                        )}
+                              </NavItem>
                             ])
-                            
                 }
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
             {createAcctButton ? (
                         <CreateAccount setCreateAcctButton={setCreateAcctButton}
                         />
                     ) : (
                         <button onClick={handleClick} >Create Account </button>
                     )}
-            </NavItem>
+            </NavItem> */}
 
           </Nav>
         {/* </Collapse> */}
